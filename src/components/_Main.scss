@@ -1,0 +1,7 @@
+@import '/src/styles/colors';
+
+.btn-theme1 {
+  background-color: $theme1-key-bg;
+  color: $theme1-text-btn;
+  box-shadow: 0 5px 0 $theme1-key-shadow;
+}

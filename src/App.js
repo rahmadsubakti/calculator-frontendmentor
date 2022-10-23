@@ -1,6 +1,8 @@
+import Main from "components/Main";
+import 'styles/style.scss';
+
 function App() {
-  return (
-  );
+  return <Main />;
 }
 
 export default App;
