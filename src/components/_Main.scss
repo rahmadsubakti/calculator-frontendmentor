@@ -1,16 +1,55 @@
 @import '/src/styles/colors';
+@import '/src/styles/mixins';
 
-.btn-theme1 {
-  background-color: $theme1-key-bg;
-  color: $theme1-text-btn;
-  box-shadow: 0 5px 0 $theme1-key-shadow;
+.btn-neutral-theme1 {
+  @include btn-theme($theme1-key-bg, $theme1-text-btn, $theme1-key-shadow);
 }
 
-.scr-theme1 {
-  background-color: $theme1-screen-bg;
-  color: $theme1-text;
+.btn-neutral-theme2 {
+  @include btn-theme($theme2-key-bg, $theme2-text-btn, $theme2-key-shadow);
 }
 
+.btn-neutral-theme3 {
+  @include btn-theme($theme3-key-bg, $theme3-text-btn, $theme3-key-shadow);
+}
+
+.btn-secondary-theme1 {
+  @include btn-theme($theme1-key-second-bg, $theme1-key-second-text, $theme1-key-second-shadow)
+}
+
+.btn-secondary-theme2 {
+  @include btn-theme($theme2-key-second-bg, $theme2-key-second-text, $theme2-key-second-shadow)
+}
+
+.btn-secondary-theme3 {
+  @include btn-theme($theme3-key-second-bg, $theme3-key-second-text, $theme3-key-second-shadow)
+}
+
+.btn-primary-theme1 {
+  @include btn-theme($theme1-key-primary-bg, $theme1-text, $theme1-key-primary-shadow)
+}
+
+.btn-primary-theme2 {
+  @include btn-theme($theme2-key-primary-bg, $theme2-text, $theme2-key-primary-shadow)
+}
+
+.btn-primary-theme3 {
+  @include btn-theme($theme3-key-primary-bg, $theme3-text, $theme3-key-primary-shadow)
+}
+
+.display-theme1 {
+  @include display-theme($theme1-screen-bg, $theme1-screen-text);
+}
+
+.display-theme2 {
+  @include display-theme($theme2-screen-bg, $theme2-screen-text);
+}
+
+.display-theme3 {
+  @include display-theme($theme3-screen-bg, $theme3-screen-text);
+}
+
+/*
 .switch-theme1 {
   background-color: $theme1-toggle-bg;
   transition: 0.2s;
@@ -39,4 +78,16 @@
     background-color: $theme3-key-primary-bg;
     transition: 0.2s;
   }
+}*/
+
+.switch-theme1 {
+  @include switch-theme($theme1-toggle-bg, $theme1-key-primary-bg);
+}
+
+.switch-theme2 {
+  @include switch-theme($theme2-toggle-bg, $theme2-key-primary-bg);
+}
+
+.switch-theme3 {
+  @include switch-theme($theme3-toggle-bg, $theme3-key-primary-bg);
 }

@@ -1,15 +1,24 @@
+import { useContext } from 'react';
+
+import { ThemeContext } from 'components/MainContext';
+
 import './_Button.scss'
 
 const Button = ({
-  className, 
+  type, 
   onClick,
   value, 
   children}) => {
-    if (className) {
-      className = " " + className;
+    let theme = useContext(ThemeContext);
+    theme = "-theme" + theme;
+    if (type) {
+      type = "-" + type;
     } else {
-      className = "";
+      type = "";
     }
+
+    let className = " btn" + type + theme
+
     return <button 
               onClick={onClick}
               value={value}

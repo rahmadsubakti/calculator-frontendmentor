@@ -1,0 +1,25 @@
+
+$duration: 0.2s;
+
+@mixin switch-theme($bg-switch, $bg-toggle) {
+  background-color: $bg-switch;
+  transition: $duration;
+
+  .toggle {
+    background-color: $bg-toggle;
+    transition: $duration;
+  }
+}
+
+@mixin btn-theme($bg-btn, $color-btn, $shadow-btn){
+  background-color: $bg-btn;
+  color: $color-btn;
+  box-shadow: 0 5px 0 $shadow-btn;
+  transition: $duration;
+}
+
+@mixin display-theme($bg-display, $text-display) {
+  background-color: $bg-display;
+  color: $text-display;
+  transition: $duration;
+}

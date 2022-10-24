@@ -1,8 +1,11 @@
 import { useState } from 'react';
 
-import { ThemeSwitcher } from './units';
+//import { ThemeSwitcher } from './units';
+import { KeyPadSection } from './KeyPadSection'; 
+import { Display } from './units';
 
 import { ThemeContext, ThemeSwitchContext } from './MainContext';
+import { ThemeSwitcher } from './units';
 
 import './_Main.scss';
 
@@ -19,6 +22,7 @@ const Main = () => {
       <ThemeContext.Provider value={theme}>
         <main>
           <ThemeSwitcher />
+          <Display />
         </main>
       </ThemeContext.Provider>
     </ThemeSwitchContext.Provider>
