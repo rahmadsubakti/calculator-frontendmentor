@@ -5,3 +5,38 @@
   color: $theme1-text-btn;
   box-shadow: 0 5px 0 $theme1-key-shadow;
 }
+
+.scr-theme1 {
+  background-color: $theme1-screen-bg;
+  color: $theme1-text;
+}
+
+.switch-theme1 {
+  background-color: $theme1-toggle-bg;
+  transition: 0.2s;
+
+  .toggle {
+    background-color: $theme1-key-primary-bg;
+    transition: 0.2s;
+  }
+}
+
+.switch-theme2 {
+  background-color: $theme2-toggle-bg;
+  transition: 0.2s;
+
+  .toggle {
+    background-color: $theme2-key-primary-bg;
+    transition: 0.2s;
+  }
+}
+
+.switch-theme3 {
+  background-color: $theme3-toggle-bg;
+  transition: 0.2s;
+  
+  .toggle {
+    background-color: $theme3-key-primary-bg;
+    transition: 0.2s;
+  }
+}

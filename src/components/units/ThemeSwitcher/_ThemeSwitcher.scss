@@ -1,0 +1,44 @@
+$width: 80px;
+
+.theme-switch {
+  margin-left: 400px;
+  margin-top: 100px;
+  width: $width;
+  padding: 5px;
+  background-color: yellow;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  [type="radio"] {
+    cursor: pointer;
+    opacity: 0;
+    z-index: 1;
+
+    &:first-of-type:checked ~ .toggle {
+      transform: translateX(0);
+    }
+
+    &:nth-of-type(2):checked ~ .toggle {
+      transform: translateX(calc(((($width - 10px) - (13px * 3)) / 2) + 13px));
+      // ($container-width-paddingleft&right) - (widthRadio * numRadio / numGapRadio) + widthRadio 
+    }
+
+    &:last-of-type:checked ~ .toggle {
+      transform: translateX(57px);
+    }
+  }
+
+  .toggle {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: green;
+    transition: 0.2s;
+    z-index: 1;
+  }
+}
