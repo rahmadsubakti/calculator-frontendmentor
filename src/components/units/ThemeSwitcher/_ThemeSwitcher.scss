@@ -1,8 +1,8 @@
-$width: 80px;
+$width: 70px;
 
 .theme-switch {
   width: $width;
-  padding: 5px;
+  padding: 7px 5px;
   background-color: yellow;
   border-radius: 20px;
   display: flex;
@@ -11,6 +11,8 @@ $width: 80px;
 
   [type="radio"] {
     cursor: pointer;
+    width: 15px;
+    height: 15px;
     opacity: 0;
     z-index: 1;
 
@@ -19,21 +21,21 @@ $width: 80px;
     }
 
     &:nth-of-type(2):checked ~ .toggle {
-      transform: translateX(calc(((($width - 10px) - (13px * 3)) / 2) + 13px));
+      transform: translateX(calc(((($width - 10px) - (15px * 3)) / 2) + 15px));
       // ($container-width-paddingleft&right) - (widthRadio * numRadio / numGapRadio) + widthRadio 
     }
 
     &:last-of-type:checked ~ .toggle {
-      transform: translateX(57px);
+      transform: translateX(45px);
     }
   }
 
   .toggle {
     position: absolute;
     left: 5px;
-    top: 5px;
-    width: 13px;
-    height: 13px;
+    top: 7px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     background-color: green;
     transition: 0.2s;

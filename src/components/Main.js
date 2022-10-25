@@ -3,6 +3,7 @@ import { useState } from 'react';
 //import { ThemeSwitcher } from './units';
 import { KeyPadSection } from './KeyPadSection'; 
 import { Display } from './units';
+import { HeaderCalcSection } from './HeaderSection';
 
 import { ThemeContext, ThemeSwitchContext } from './MainContext';
 import { ThemeSwitcher } from './units';
@@ -20,9 +21,10 @@ const Main = () => {
   return (
     <ThemeSwitchContext.Provider value={handleTheme}>
       <ThemeContext.Provider value={theme}>
-        <main>
-          <ThemeSwitcher />
+        <main className={"main-theme" + theme}>
+          <HeaderCalcSection />
           <Display />
+          <KeyPadSection />
         </main>
       </ThemeContext.Provider>
     </ThemeSwitchContext.Provider>

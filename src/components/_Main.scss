@@ -1,39 +1,39 @@
 @import '/src/styles/colors';
 @import '/src/styles/mixins';
 
-.btn-neutral-theme1 {
+.btn-neutral.theme1 {
   @include btn-theme($theme1-key-bg, $theme1-text-btn, $theme1-key-shadow);
 }
 
-.btn-neutral-theme2 {
+.btn-neutral.theme2 {
   @include btn-theme($theme2-key-bg, $theme2-text-btn, $theme2-key-shadow);
 }
 
-.btn-neutral-theme3 {
+.btn-neutral.theme3 {
   @include btn-theme($theme3-key-bg, $theme3-text-btn, $theme3-key-shadow);
 }
 
-.btn-secondary-theme1 {
+.btn-secondary.theme1 {
   @include btn-theme($theme1-key-second-bg, $theme1-key-second-text, $theme1-key-second-shadow)
 }
 
-.btn-secondary-theme2 {
+.btn-secondary.theme2 {
   @include btn-theme($theme2-key-second-bg, $theme2-key-second-text, $theme2-key-second-shadow)
 }
 
-.btn-secondary-theme3 {
+.btn-secondary.theme3 {
   @include btn-theme($theme3-key-second-bg, $theme3-key-second-text, $theme3-key-second-shadow)
 }
 
-.btn-primary-theme1 {
+.btn-primary.theme1 {
   @include btn-theme($theme1-key-primary-bg, $theme1-text, $theme1-key-primary-shadow)
 }
 
-.btn-primary-theme2 {
+.btn-primary.theme2 {
   @include btn-theme($theme2-key-primary-bg, $theme2-text, $theme2-key-primary-shadow)
 }
 
-.btn-primary-theme3 {
+.btn-primary.theme3 {
   @include btn-theme($theme3-key-primary-bg, $theme3-text, $theme3-key-primary-shadow)
 }
 
@@ -49,37 +49,6 @@
   @include display-theme($theme3-screen-bg, $theme3-screen-text);
 }
 
-/*
-.switch-theme1 {
-  background-color: $theme1-toggle-bg;
-  transition: 0.2s;
-
-  .toggle {
-    background-color: $theme1-key-primary-bg;
-    transition: 0.2s;
-  }
-}
-
-.switch-theme2 {
-  background-color: $theme2-toggle-bg;
-  transition: 0.2s;
-
-  .toggle {
-    background-color: $theme2-key-primary-bg;
-    transition: 0.2s;
-  }
-}
-
-.switch-theme3 {
-  background-color: $theme3-toggle-bg;
-  transition: 0.2s;
-  
-  .toggle {
-    background-color: $theme3-key-primary-bg;
-    transition: 0.2s;
-  }
-}*/
-
 .switch-theme1 {
   @include switch-theme($theme1-toggle-bg, $theme1-key-primary-bg);
 }
@@ -90,4 +59,96 @@
 
 .switch-theme3 {
   @include switch-theme($theme3-toggle-bg, $theme3-key-primary-bg);
+}
+
+.keypad-theme1 {
+  @include keypad-theme($theme1-keypad-bg);
+}
+
+.keypad-theme2 {
+  @include keypad-theme($theme2-keypad-bg);
+}
+
+.keypad-theme3 {
+  @include keypad-theme($theme3-keypad-bg);
+}
+
+.main-theme1 {
+  @include main-theme($theme1-main-bg);
+}
+
+.main-theme2 {
+  @include main-theme($theme2-main-bg);
+}
+
+.main-theme3 {
+  @include main-theme($theme3-main-bg);
+}
+
+main {
+  padding: 0.9rem 0.75rem;
+}
+
+.header-calc {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+
+  h1 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-left: 0.2rem;
+  }
+
+  .theme-switcher-container {
+    display: flex;
+
+    p {
+      font-size: 0.4rem;
+    }
+
+    & > p {
+      margin-right: 0.94rem;
+      margin-top: 0.83rem;
+    }
+
+    .switcher-container {
+      .type-theme {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 0.2rem;
+      }
+    }
+  }
+}
+
+.header-calc-theme1 {
+  @include header-calc-theme($theme1-text);
+}
+
+.header-calc-theme2 {
+  @include header-calc-theme($theme2-text);
+}
+
+.header-calc-theme3 {
+  @include header-calc-theme($theme3-text);
+}
+
+.keypad-container {
+  width: 100%;
+  padding: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1.9rem);
+  grid-template-rows: repeat(5, 1.9rem);
+  grid-column-gap: 0.38rem;
+  grid-row-gap: 0.5rem;
+  border-radius: 10px;
+
+  .btn-secondary, .btn-primary {
+    font-size: 0.6rem;
+  }
+
+  .btn:nth-child(17), .btn-primary {
+    grid-column: span 2;
+  }
 }

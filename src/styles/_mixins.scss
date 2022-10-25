@@ -23,3 +23,18 @@ $duration: 0.2s;
   color: $text-display;
   transition: $duration;
 }
+
+@mixin header-calc-theme($text) {
+  color: $text;
+  transition: $duration;
+}
+
+@mixin keypad-theme($bg) {
+  background-color: $bg;
+  transition: $duration;
+}
+
+@mixin main-theme($bg) {
+  background-color: $bg;
+  transition: $duration;
+}

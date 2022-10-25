@@ -10,7 +10,7 @@ const Button = ({
   value, 
   children}) => {
     let theme = useContext(ThemeContext);
-    theme = "-theme" + theme;
+    theme = " theme" + theme;
     if (type) {
       type = "-" + type;
     } else {

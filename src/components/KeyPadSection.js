@@ -1,8 +1,14 @@
+import { useContext } from "react";
+
+import { ThemeContext } from "./MainContext";
+
 import { Button } from "./units";
 
 export const KeyPadSection = () => {
+  let theme = useContext(ThemeContext);
+  theme = " keypad-theme" + theme;
   return (
-    <section className="keypad-container">
+    <section className={"keypad-container" + theme}>
       <Button type="neutral" value="7">7</Button>
       <Button type="neutral" value="8">8</Button>
       <Button type="neutral" value="9">9</Button>
