@@ -2,39 +2,39 @@
 @import '/src/styles/mixins';
 
 .btn-neutral.theme1 {
-  @include btn-theme($theme1-key-bg, $theme1-text-btn, $theme1-key-shadow);
+  @include btn-theme($theme1-key-bg, $theme1-text-btn, $theme1-key-shadow, $theme1-key-hover);
 }
 
 .btn-neutral.theme2 {
-  @include btn-theme($theme2-key-bg, $theme2-text-btn, $theme2-key-shadow);
+  @include btn-theme($theme2-key-bg, $theme2-text-btn, $theme2-key-shadow, $theme2-key-hover);
 }
 
 .btn-neutral.theme3 {
-  @include btn-theme($theme3-key-bg, $theme3-text-btn, $theme3-key-shadow);
+  @include btn-theme($theme3-key-bg, $theme3-text-btn, $theme3-key-shadow, $theme3-key-hover);
 }
 
 .btn-secondary.theme1 {
-  @include btn-theme($theme1-key-second-bg, $theme1-key-second-text, $theme1-key-second-shadow)
+  @include btn-theme($theme1-key-second-bg, $theme1-key-second-text, $theme1-key-second-shadow, $theme1-key-second-hover);
 }
 
 .btn-secondary.theme2 {
-  @include btn-theme($theme2-key-second-bg, $theme2-key-second-text, $theme2-key-second-shadow)
+  @include btn-theme($theme2-key-second-bg, $theme2-key-second-text, $theme2-key-second-shadow, $theme2-key-second-hover)
 }
 
 .btn-secondary.theme3 {
-  @include btn-theme($theme3-key-second-bg, $theme3-key-second-text, $theme3-key-second-shadow)
+  @include btn-theme($theme3-key-second-bg, $theme3-key-second-text, $theme3-key-second-shadow, $theme3-key-second-hover)
 }
 
 .btn-primary.theme1 {
-  @include btn-theme($theme1-key-primary-bg, $theme1-text, $theme1-key-primary-shadow)
+  @include btn-theme($theme1-key-primary-bg, $theme1-text, $theme1-key-primary-shadow, $theme1-key-primary-hover)
 }
 
 .btn-primary.theme2 {
-  @include btn-theme($theme2-key-primary-bg, $theme2-text, $theme2-key-primary-shadow)
+  @include btn-theme($theme2-key-primary-bg, $theme2-key-second-text, $theme2-key-primary-shadow, $theme2-key-primary-hover)
 }
 
 .btn-primary.theme3 {
-  @include btn-theme($theme3-key-primary-bg, $theme3-text, $theme3-key-primary-shadow)
+  @include btn-theme($theme3-key-primary-bg, $theme3-text, $theme3-key-primary-shadow, $theme3-key-primary-hover)
 }
 
 .display-theme1 {
@@ -150,5 +150,35 @@ main {
 
   .btn:nth-child(17), .btn-primary {
     grid-column: span 2;
+  }
+}
+
+@include desktop {
+  #root {
+    width: 1440px;
+  }
+
+  main {
+    padding: 3rem 14rem;
+  }
+
+  .header-calc {
+
+    margin-bottom: 0.7rem;
+
+    h1 {
+      margin-top: 0.2rem;
+    }
+  }
+
+  .keypad-container {
+    padding: 0.93rem 1rem;
+    grid-template-columns: repeat(4, 3.15rem);
+    grid-column-gap: .78rem;
+    grid-row-gap: .85rem;
+
+    .btn-secondary, .btn-primary {
+      font-size: .8rem;
+    }
   }
 }

@@ -11,11 +11,15 @@ $duration: 0.2s;
   }
 }
 
-@mixin btn-theme($bg-btn, $color-btn, $shadow-btn){
+@mixin btn-theme($bg-btn, $color-btn, $shadow-btn, $hover-btn){
   background-color: $bg-btn;
   color: $color-btn;
   box-shadow: 0 5px 0 $shadow-btn;
   transition: $duration;
+
+  &:hover {
+    background-color: $hover-btn;
+  }
 }
 
 @mixin display-theme($bg-display, $text-display) {
@@ -37,4 +41,10 @@ $duration: 0.2s;
 @mixin main-theme($bg) {
   background-color: $bg;
   transition: $duration;
+}
+
+@mixin desktop {
+  @media screen and (min-width: 376px) {
+    @content;
+  }
 }
