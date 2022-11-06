@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 import KeyPadSection from './KeyPadSection'; 
 import { Display } from './units';
@@ -16,15 +16,23 @@ const Main = () => {
     total: 0,
   }
 
-  const [theme, setTheme] = useState("1");
+  const [theme, setTheme] = useState(localStorage.getItem('theme'));
   const [dispVal, setDispVal] = useState(init.dispVal);
   const [operator, setOperator] = useState(init.operator);
 
   const signalRef = useRef(init.signal); // for when operator is present
   const totalRef = useRef(init.total);
 
+  useEffect(() => {
+    const currentTheme = localStorage.getItem('theme');
+    if (!currentTheme) {
+      localStorage.setItem('theme', "1");
+    }
+  }, [])
+
   const handleTheme = e => {
     const value = e.target.value;
+    localStorage.setItem('theme', value);
     setTheme(value);
   }
 
