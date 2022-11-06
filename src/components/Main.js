@@ -157,37 +157,40 @@ const Main = () => {
       switch(operator) {
         case '+':
           totalRef.current += val;
-          setDispVal(totalRef.current);
           break;
         case '-':
           totalRef.current -= val;
-          setDispVal(totalRef.current);
           break;
         case '*':
           totalRef.current *= val;
-          setDispVal(totalRef.current);
           break;
         case '/':
-          /*try {
-            setDispVal(divide(totalRef.current, val))
-          } catch(err) {
-            setDispVal(val => err);
-          }*/
           totalRef.current /= val;
-          setDispVal(totalRef.current);
           break;
         default:
           totalRef.current = val;
       }
     }
 
-    if (operatorClicked === '=') {
+    if (!signalRef.current) {
+      // Check if user divide number with zero.
+      if (isFinite(totalRef.current)) {
+        setDispVal(totalRef.current);
+      } else {
+        totalRef.current = 'cannot';
+      }
+    }
+
+    if (operatorClicked === '=' || isNaN(totalRef.current)) {
+      if (isNaN(totalRef.current)) {
+        setDispVal(totalRef.current);
+      }
       totalRef.current = init.total;
       setOperator(init.operator);
     } else {
       setOperator(operatorClicked);
     }
-    
+
     signalRef.current = true;
   }
   
