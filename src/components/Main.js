@@ -98,12 +98,28 @@ const FMain = () => {
   )
 }*/
 
-const Main = () => {
-  const [theme, setTheme] = useState("1");
-  const [dispVal, setDispVal] = useState("");
-  const [operator, setOperator] = useState("");
+const divide = (num1, num2) => {
+  const result = num1/num2;
+  if (!isFinite(result)) {
+    throw "Cannot be divided by zero"
+  }
+  return result;
+}
 
-  const signalRef = useRef(null); // for when operator is present
+const Main = () => {
+  const init = {
+    dispVal: "",
+    operator: "",
+    signal: false,
+    total: 0,
+  }
+
+  const [theme, setTheme] = useState("1");
+  const [dispVal, setDispVal] = useState(init.dispVal);
+  const [operator, setOperator] = useState(init.operator);
+
+  const signalRef = useRef(init.signal); // for when operator is present
+  const totalRef = useRef(init.total);
 
   const handleTheme = e => {
     const value = e.target.value;
@@ -116,20 +132,63 @@ const Main = () => {
   }
 
   const handleReset = () => {
-    setDispVal("");
+    signalRef.current = init.signal;
+    totalRef.current = init.total;
+    setDispVal(init.dispVal);
+    setOperator(init.operator)
   }
 
   const getNumber = e => {
+    // get new input if operator other than '=' is clicked
     if (signalRef.current) {
-      signalRef.current = null;
+      signalRef.current = false;
       setDispVal(e.target.value);
     } else {
       setDispVal(dispVal.concat(e.target.value));
     }
   }
 
-  const handleOperation = () => {
-    signalRef.current = "y";
+  const handleOperation = e => {
+    const operatorClicked = e.target.value;
+    const val = parseFloat(dispVal);
+
+    // prevent operator from being clicked twice
+    if (!signalRef.current) {
+      switch(operator) {
+        case '+':
+          totalRef.current += val;
+          setDispVal(totalRef.current);
+          break;
+        case '-':
+          totalRef.current -= val;
+          setDispVal(totalRef.current);
+          break;
+        case '*':
+          totalRef.current *= val;
+          setDispVal(totalRef.current);
+          break;
+        case '/':
+          /*try {
+            setDispVal(divide(totalRef.current, val))
+          } catch(err) {
+            setDispVal(val => err);
+          }*/
+          totalRef.current /= val;
+          setDispVal(totalRef.current);
+          break;
+        default:
+          totalRef.current = val;
+      }
+    }
+
+    if (operatorClicked === '=') {
+      totalRef.current = init.total;
+      setOperator(init.operator);
+    } else {
+      setOperator(operatorClicked);
+    }
+    
+    signalRef.current = true;
   }
   
   /*const handleOperation = e => {
