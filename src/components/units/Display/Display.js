@@ -4,7 +4,7 @@ import { ThemeContext } from "components/MainContext";
 
 import "./_Display.scss"
 
-const Display = ({value}) => {
+const Display = ({value, operator}) => {
   let theme = useContext(ThemeContext);
   let className = " display-theme" + theme;
 
@@ -16,6 +16,7 @@ const Display = ({value}) => {
 
   return (
     <div className={"display" + className}>
+      <p>{operator}</p>
       <h1>{value}</h1>
     </div>
   )

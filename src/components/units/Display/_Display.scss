@@ -5,6 +5,13 @@
   padding: 0.8rem 0.74rem;
   margin-bottom: 0.75rem;
   overflow-x: hidden;
+  position: relative;
+
+  p {
+    position: absolute;
+    top: 0.2rem;
+    left: 0.3rem;
+  }
 
   h1 {
     text-align: right;

@@ -116,7 +116,7 @@ const Main = () => {
       <ThemeContext.Provider value={theme}>
         <main className={"main-theme" + theme}>
           <HeaderCalcSection />
-          <Display value={dispVal} />
+          <Display value={dispVal} operator={operator}/>
           <handleInputContext.Provider value={handleInput}>
             <KeyPadSection signalRef={signalRef}/>
           </handleInputContext.Provider>
