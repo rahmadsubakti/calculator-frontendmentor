@@ -28,12 +28,16 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+- Change Theme
+![](./screenshot-1.gif)
+
+- Calculation
+![](./screenshot-2.gif)
 
 ### Links
 
 - Solution URL: [github](https://github.com/rahmadsubakti/calculator-frontendmentor)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [vercel](https://calculator-frontendmentor-rahmadsubakti.vercel.app/)
 
 ## My process
 
