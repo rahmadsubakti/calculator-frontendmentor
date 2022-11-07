@@ -8,6 +8,13 @@ const Display = ({value, operator}) => {
   let theme = useContext(ThemeContext);
   let className = " display-theme" + theme;
 
+  const opSymbol = {
+    "add": "+",
+    "sub": "-",
+    "mlp": "x",
+    "div": "/"
+  }
+
   if (value === "") {
     value = 0
   } else {
@@ -16,7 +23,7 @@ const Display = ({value, operator}) => {
 
   return (
     <div className={"display" + className}>
-      <p>{operator}</p>
+      <p>{opSymbol[operator]}</p>
       <h1>{value}</h1>
     </div>
   )

@@ -65,16 +65,16 @@ const Main = () => {
     // prevent operator from being clicked twice
     if (!signalRef.current) {
       switch(operator) {
-        case '+':
+        case 'add':
           totalRef.current += val;
           break;
-        case '-':
+        case 'sub':
           totalRef.current -= val;
           break;
-        case '*':
+        case 'mlp':
           totalRef.current *= val;
           break;
-        case '/':
+        case 'div':
           totalRef.current /= val;
           break;
         default:
